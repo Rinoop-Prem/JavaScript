@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <title>Simple Calculator</title>
+  <style>
+  body{background-image:url("untitled.png");
+	background-size:cover ;
+	display: inline'}
+.container-div {
+	width: 300px;
+    border: 25px solid white;
+	border-radius:15px;
+    padding: 25px;
+    margin: auto;	
+	}
+	button{
+	border-radius:10px;
+	background-color: rgb(150,200,200);
+    border: none;
+    color: black;
+    padding: 5px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 2px 2px;
+    cursor: pointer;
+	transition:transform 1s;
+	}
+	button:hover{
+	transform:rotate(-20deg);
+	}
+	#result{
+	background-color: white;
+	border-radius:10px;
+	padding: 5px 40px;
+	font-size: 20px;
+	}
+	h1{
+	color:black;
+	border: 5px solid black;
+	border-radius:10px;
+	text-align:center;
+	}
+
+	</style>
+
+   </head>
+ <body>
+ <div class="container-div">
+<h1>Simple Calc !!</h1>
+
+  <input id="result" placeholder="0" value="0" style="text-align:right"><br>
+  <br>
+  <button id="7" onclick="dispValue('7')">7</button>
+  <button id="8" onclick="dispValue('8')">8</button>
+  <button id="9" onclick="dispValue('9')">9</button><br>
+  <button id="4" onclick="dispValue('4')">4</button>
+  <button id="5" onclick="dispValue('5')">5</button>
+  <button id="6" onclick="dispValue('6')">6</button><br>
+  <button id="1" onclick="dispValue('1')">1</button>
+  <button id="2" onclick="dispValue('2')">2</button>
+  <button id="3" onclick="dispValue('3')">3</button><br>
+  <button id="0" onclick="dispValue('0')">0</button>
+  <button id="." onclick="dispValue('.')">.</button><br><br>
+  <button id="+" onclick="dispValue('+')">+</button>
+  <button id="-" onclick="dispValue('-')">-</button>
+  <br>
+  
+  <button id="*" onclick="dispValue('*')">*</button>
+  <button id="/" onclick="dispValue('/')">/</button>
+  <br><br>
+  
+  <button id="=" onclick="result.value=eval(result.value)" style="background-color:green">=</button>
+  <button type="reset" onclick="resetButton()" style="background-color:red">RESET</button>
+  </div>
+  <script>
+  function resetButton() {
+	document.getElementById("result").value=null;
+  }
+
+  function dispValue(n) {
+	  var res=document.getElementById("result").value + n;
+	document.getElementById("result").value=res; 
+}
+
+  </script>
+ </body>
+</html>
